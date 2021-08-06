@@ -56,7 +56,7 @@ class download(object):
 					download_name = child.a.string
 					names = str(download_name).split('章')
 					name = charter.findall(names[0] + '章')
-					if name and numbers > 12:
+					if numbers > 12:
 							download_dict[download_name] = download_url
 					numbers += 1
 					
@@ -115,7 +115,7 @@ if __name__ == "__main__":
 	index = 1
 
 	#下载中
-	print("《%s》下载中:" % name[:-4])
+	print("《%s》下载中:" % name)
 	for key, value in url_dict.items():
 		if index > 0 and index <= 1000:
 			d.Writer(key, name+".txt", d.Downloader(value))
@@ -142,6 +142,6 @@ if __name__ == "__main__":
 		index += 1	
 
 	print("下载成功总数：%s" % index)
-	print("《%s》下载完成！" % name[:-4])
+	print("《%s》下载完成！" % name)
 
 	
