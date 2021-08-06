@@ -13,6 +13,7 @@
 - py biquge.py
 - 输入笔趣阁小说目录页面（[大奉打更人](https://www.biqugeu.net/135_135747/)）
 - 笔趣阁地址：https://www.biqugeu.net/
+- 2000章一个文件（下载更快）
 
 
 
