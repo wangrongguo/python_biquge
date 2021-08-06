@@ -9,13 +9,13 @@ import sys
 import types
 
 """
-类说明:下载《笔趣看》网小说: url:https://www.biqukan.com/
+类说明:下载《笔趣阁》网小说: url:https://www.biqukan.com/
 Parameters:
-	target - 《笔趣看》网指定的小说目录地址(string)
+	target - 《笔趣阁》网指定的小说目录地址(string)
 Returns:
 	无
 Modify:
-	2017-05-06
+	2021-08-06
 """
 class download(object):
 	def __init__(self, target):
@@ -31,7 +31,7 @@ class download(object):
 		numbers - 章节数(int)
 		download_dict - 保存章节名称和下载链接的字典(dict)
 	Modify:
-		2017-05-06
+		2021-08-06
 	"""
 	def get_download_url(self):
 		charter = re.compile(u'[第弟](.+)章', re.IGNORECASE)
@@ -71,7 +71,7 @@ class download(object):
 	Returns:
 		soup_text - 章节内容(string)
 	Modify:
-		2017-05-06
+		2021-08-06
 	"""
 	def Downloader(self, url):
 		download_req = request.Request(url = url, headers = self.__head)
@@ -91,7 +91,7 @@ class download(object):
 	Returns:
 		无
 	Modify:
-		2017-05-06
+		2021-08-06
 	"""
 	def Writer(self, name, path, text):
 		write_flag = True
