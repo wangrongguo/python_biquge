@@ -56,9 +56,12 @@ class download(object):
 					download_name = child.a.string
 					names = str(download_name).split('章')
 					name = charter.findall(names[0] + '章')
-					if name and numbers > 13:
+					if name and numbers > 12:
 							download_dict[download_name] = download_url
 					numbers += 1
+					
+		print("检测到总数为：" + str(numbers))
+		
 		return novel_name + '.txt', numbers, download_dict
 	
 	"""
@@ -98,7 +101,7 @@ class download(object):
 			f.write('\n\n')
 
 if __name__ == "__main__":
-	print("\n\t\t欢迎使用《笔趣看》小说下载小工具\n\n\t\t作者:Jack-Cui\t时间:2017-05-06\n")
+	print("\n\t\t欢迎使用《笔趣阁》小说下载小工具\n\n\t\t作者:XXX\t时间:2021-08-06\n")
 	print("*************************************************************************")
 	
 	#小说地址
@@ -115,10 +118,11 @@ if __name__ == "__main__":
 	print("《%s》下载中:" % name[:-4])
 	for key, value in url_dict.items():
 		d.Writer(key, name, d.Downloader(value))
-		sys.stdout.write("已下载:%.3f%%" %  float(index/numbers) + '\r')
+		sys.stdout.write("已下载:%.3f%%" %  index + '\r')
 		sys.stdout.flush()
 		index += 1	
 
+	print("《%s》下载总数！" % index)
 	print("《%s》下载完成！" % name[:-4])
 
 	
