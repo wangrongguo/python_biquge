@@ -62,7 +62,7 @@ class download(object):
 					
 		print("检测到小说总章数为：" + str(numbers) +"章")
 		
-		return novel_name + '.txt', numbers, download_dict
+		return novel_name , numbers, download_dict
 	
 	"""
 	函数说明:爬取文章内容
@@ -117,29 +117,31 @@ if __name__ == "__main__":
 	#下载中
 	print("《%s》下载中:" % name[:-4])
 	for key, value in url_dict.items():
-		if index > 0 and index < 2000:
-			d.Writer(key, name, d.Downloader(value))
-		elif index > 2001 and index < 4000:
-			d.Writer(key, name+"1.txt", d.Downloader(value))
-		elif index > 4001 and index < 6000:
-			d.Writer(key, name+"2.txt", d.Downloader(value))
-		elif index > 6001 and index < 8000:
-			d.Writer(key, name+"3.txt", d.Downloader(value))
-		elif index > 8001 and index < 10000:
-			d.Writer(key, name+"4.txt", d.Downloader(value))
-		elif index > 10001 and index < 12000:
-			d.Writer(key, name+"5.txt", d.Downloader(value))
-		elif index > 12001 and index < 14000:
-			d.Writer(key, name+"6.txt", d.Downloader(value))
-		elif index > 14001 and index < 16000:
-			d.Writer(key, name+"7.txt", d.Downloader(value))
-		elif index > 18001 and index < 20000:
-			d.Writer(key, name+"8.txt", d.Downloader(value))
-		sys.stdout.write("已下载:%.3f%%" %  index + '\r')
+		if index > 0 and index <= 1000:
+			d.Writer(key, name+".txt", d.Downloader(value))
+		elif index >= 1001 and index <= 2000:
+			d.Writer(key, name+"-1.txt", d.Downloader(value))
+		elif index >= 2001 and index <= 3000:
+			d.Writer(key, name+"-2.txt", d.Downloader(value))
+		elif index >= 3001 and index <= 4000:
+			d.Writer(key, name+"-3.txt", d.Downloader(value))
+		elif index >= 4001 and index <= 5000:
+			d.Writer(key, name+"-4.txt", d.Downloader(value))
+		elif index >= 5001 and index <= 6000:
+			d.Writer(key, name+"-5.txt", d.Downloader(value))
+		elif index >= 6001 and index <= 7000:
+			d.Writer(key, name+"-6.txt", d.Downloader(value))
+		elif index >= 7001 and index <= 8000:
+			d.Writer(key, name+"-7.txt", d.Downloader(value))
+		elif index >= 8001 and index <= 9000:
+			d.Writer(key, name+"-8.txt", d.Downloader(value))
+		else:
+			d.Writer(key, name+"-9.txt", d.Downloader(value))
+		sys.stdout.write("已下载:%s" %  index + '\r')
 		sys.stdout.flush()
 		index += 1	
 
-	print("《%s》下载成功总数！" % index)
+	print("下载成功总数：%s" % index)
 	print("《%s》下载完成！" % name[:-4])
 
 	
